@@ -16,6 +16,10 @@ function updateCartUI() {
 
 function addToCart(id) {
     const item = laptops.find(l => l.id === id);
+    console.log(item)
+    if (item) {
+        cart.push(item)
+    }
     updateCartUI();
     alert(`${item.brand} added to cart!`);
 }
