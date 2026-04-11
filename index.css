@@ -6,6 +6,7 @@ header {
     justify-content: space-between; 
     align-items: center;
     padding: 10px 50px;
+    display: flex;
 }
 
 .cart-link {
@@ -66,3 +67,4 @@ input { flex-grow: 1; }
     color: #3498db; 
     font-size: 0.9rem;
 }
+
