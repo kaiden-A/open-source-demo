@@ -1,6 +1,6 @@
 const laptops = [
     { id: 1, brand: "Dell", model: "XPS 13", price: 100 },
-    { id: 2, brand: "Apple", model: "MacBook Air", price: 1200 },
+    { id: 2, brand: "Apple", model: "Salam Air", price: 1200 },
     { id: 3, brand: "HP", model: "Spectre x360", price: 1100 },
     { id: 4, brand: "Lenovo", model: "ThinkPad X1", price: 1400 },
     { id: 5, brand: "Asus", model: "ROG Zephyrus", price: 1900 },
