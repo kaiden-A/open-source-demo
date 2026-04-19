@@ -7,18 +7,13 @@
     <style>
         body { font-family: 'Segoe UI', sans-serif; margin: 0; background: #f4f7f6; padding: 20px; }
         .cart-container { max-width: 600px; margin: 50px auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-        
         h1 { border-bottom: 2px solid #eee; padding-bottom: 10px; color: #2c3e50; }
-        
         .cart-item { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #eee; }
         .cart-item-info h4 { margin: 0; color: #333; }
-        
         .total-section { margin-top: 20px; text-align: right; font-size: 1.5rem; }
         .total-section span { color: #27ae60; font-weight: bold; }
-        
         .checkout-btn { width: 100%; padding: 15px; background: #27ae60; color: white; border: none; border-radius: 8px; font-size: 1.1rem; cursor: pointer; margin-top: 20px; }
         .checkout-btn:hover { background: #219150; }
-        
         .empty-msg { text-align: center; color: #7f8c8d; padding: 40px 0; }
         .nav-links { margin-bottom: 20px; }
     </style>
@@ -31,9 +26,8 @@
     </div>
 
     <h1>Shopping Cart</h1>
-    
-    <div id="cartItems">
-        </div>
+
+    <div id="cartItems"></div>
 
     <div class="total-section">
         Total: <span id="cartTotal">$0</span>
@@ -43,19 +37,15 @@
 </div>
 
 <script>
-    // For this demonstration, we'll "mock" a cart in LocalStorage if it's empty
-    // so you have something to see immediately.
-    let cart = JSON.parse(localStorage.getItem('laptopCart')) || [
-        { id: 2, brand: "Apple", model: "MacBook Air", price: 1200 },
-        { id: 6, brand: "Acer", model: "Swift 3", price: 600 }
-    ];
+    // FIX: removed hardcoded mock cart fallback — now reads real cart only
+    let cart = JSON.parse(localStorage.getItem('laptopCart')) || [];
 
     const cartItemsDiv = document.getElementById('cartItems');
     const totalSpan = document.getElementById('cartTotal');
 
     function renderCart() {
         if (cart.length === 0) {
-            cartItemsDiv.innerHTML = `<div class="empty-msg">Your cart is empty!</div>`;
+            cartItemsDiv.innerHTML = '<div class="empty-msg">Your cart is empty!</div>';
             totalSpan.innerText = "$0";
             return;
         }
@@ -76,7 +66,7 @@
             `;
         }).join('');
 
-        totalSpan.innerText = `$${total}`;
+        totalSpan.innerText = '$' + total;
     }
 
     function removeItem(index) {
@@ -96,7 +86,6 @@
         }
     }
 
-    // Initial render
     renderCart();
 </script>
 
