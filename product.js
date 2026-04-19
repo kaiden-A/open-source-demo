@@ -1,7 +1,7 @@
 
 const laptops = [
     { id: 1, brand: "Dell", model: "XPS 13", price: 950, cpu: "i7", ram: "16GB", ssd: "512GB" },
-    { id: 2, brand: "Apple", model: "MacBook Air", price: 1200, cpu: "M2", ram: "8GB", ssd: "256GB" },
+    { id: 2, brand: "Apple", model: "Salam Air", price: 1200, cpu: "M2", ram: "8GB", ssd: "256GB" },
     { id: 3, brand: "HP", model: "Spectre x360", price: 1100, cpu: "i5", ram: "16GB", ssd: "512GB" },
     { id: 4, brand: "Lenovo", model: "ThinkPad X1", price: 1400, cpu: "i7", ram: "32GB", ssd: "1TB" },
     { id: 5, brand: "Asus", model: "ROG Zephyrus", price: 1900, cpu: "i9", ram: "32GB", ssd: "1TB" },
