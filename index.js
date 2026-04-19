@@ -7,10 +7,32 @@ const laptops = [
     { id: 6, brand: "Acer", model: "Swift 3", price: 600 }
 ];
 
+// Load cart from localStorage (or start empty)
 let cart = JSON.parse(localStorage.getItem('laptopCart')) || [];
 
+function addToCart(id) {
+    const item = laptops.find(l => l.id === id);
+
+    if (!item) {
+        alert("Item not found!");
+        return;
+    }
+
+    // ✅ Add item to cart array
+    cart.push(item);
+
+    // ✅ Update UI and persist to localStorage
+    updateCartUI();
+
+    // Notify user
+    alert(`${item.brand} added to cart!`);
+}
+
 function updateCartUI() {
+    // Update cart count in UI
     document.getElementById('cartCount').innerText = cart.length;
+
+    // Save updated cart back to localStorage
     localStorage.setItem('laptopCart', JSON.stringify(cart));
 }
 
