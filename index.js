@@ -1,5 +1,5 @@
 const laptops = [
-    { id: 1, brand: "Dell", model: "XPS 13", price: 100 },
+    { id: 1, brand: "Dell", model: "XPS 13", price: 950 },  // FIX: was $100, corrected to $950
     { id: 2, brand: "Apple", model: "MacBook Air", price: 1200 },
     { id: 3, brand: "HP", model: "Spectre x360", price: 1100 },
     { id: 4, brand: "Lenovo", model: "ThinkPad X1", price: 1400 },
@@ -16,8 +16,9 @@ function updateCartUI() {
 
 function addToCart(id) {
     const item = laptops.find(l => l.id === id);
+    cart.push(item); // FIX: item was never pushed into the cart array
     updateCartUI();
-    alert(`${item.brand} added to cart!`);
+    alert(item.brand + ' ' + item.model + ' added to cart!');
 }
 
 function displayLaptops(data) {
@@ -46,7 +47,7 @@ function filterData() {
 
 document.getElementById('searchBtn').addEventListener('click', filterData);
 document.getElementById('priceFilter').addEventListener('change', filterData);
+document.getElementById('searchInput').addEventListener('input', filterData);
 
-// Initial Load
 displayLaptops(laptops);
 updateCartUI();

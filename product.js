@@ -1,4 +1,3 @@
-
 const laptops = [
     { id: 1, brand: "Dell", model: "XPS 13", price: 950, cpu: "i7", ram: "16GB", ssd: "512GB" },
     { id: 2, brand: "Apple", model: "MacBook Air", price: 1200, cpu: "M2", ram: "8GB", ssd: "256GB" },
@@ -8,12 +7,10 @@ const laptops = [
     { id: 6, brand: "Acer", model: "Swift 3", price: 600, cpu: "i5", ram: "8GB", ssd: "256GB" }
 ];
 
-// Function to get URL parameters
 const urlParams = new URLSearchParams(window.location.search);
 const productId = parseInt(urlParams.get('id'));
 
 const detailsDiv = document.getElementById('details');
-
 const product = laptops.find(p => p.id === productId);
 
 if (product) {
