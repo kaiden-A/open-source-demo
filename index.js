@@ -10,12 +10,17 @@ const laptops = [
 let cart = JSON.parse(localStorage.getItem('laptopCart')) || [];
 
 function updateCartUI() {
-    document.getElementById('cartItems').innerText = cart.length;
+    document.getElementById('cartCount').innerText = cart.length;
     localStorage.setItem('laptopCart', JSON.stringify(cart));
 }
 
 function addToCart(id) {
     const item = laptops.find(l => l.id === id);
+    if (!item) {
+        alert('Item not found!');
+        return;
+    }
+    cart.push(item);
     updateCartUI();
     alert(`${item.brand} added to cart!`);
 }
