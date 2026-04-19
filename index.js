@@ -10,7 +10,7 @@ const laptops = [
 let cart = JSON.parse(localStorage.getItem('laptopCart')) || [];
 
 function updateCartUI() {
-    document.getElementById('cartCount').innerText = cart.length;
+    document.getElementById('cartItems').innerText = cart.length;
     localStorage.setItem('laptopCart', JSON.stringify(cart));
 }
 
