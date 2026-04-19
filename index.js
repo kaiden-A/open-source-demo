@@ -14,11 +14,21 @@ function updateCartUI() {
     localStorage.setItem('laptopCart', JSON.stringify(cart));
 }
 
+// Define a cart array globally
+let cart = [];
+
 function addToCart(id) {
     const item = laptops.find(l => l.id === id);
-    updateCartUI();
-    alert(`${item.brand} added to cart!`);
+    
+    if (item) {
+        cart.push(item); // Save the item to the cart
+        updateCartUI();
+        alert(`${item.brand} added to cart!`);
+    } else {
+        alert("Item not found!");
+    }
 }
+
 
 function displayLaptops(data) {
     const resultsDiv = document.getElementById('results');
