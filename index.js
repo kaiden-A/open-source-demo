@@ -16,9 +16,14 @@ function updateCartUI() {
 
 function addToCart(id) {
     const item = laptops.find(l => l.id === id);
-    updateCartUI();
-    alert(`${item.brand} added to cart!`);
+
+    if (item) {
+        cart.push(item); // ✅ ADD THIS LINE
+        updateCartUI();
+        alert(`${item.brand} added to cart!`);
+    }
 }
+
 
 function displayLaptops(data) {
     const resultsDiv = document.getElementById('results');
